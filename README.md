@@ -1,46 +1,51 @@
+---
+
 # Leafly Tea
 
-Selamat datang di *Leafly Tea*, sebuah website e-commerce untuk pemesanan teh premium secara online. Website ini dibangun menggunakan **HTML, CSS, dan Bootstrap** untuk tampilan yang responsif dan modern.
+Selamat datang di *Leafly Tea*, sebuah website e-commerce untuk pemesanan teh premium secara online. Website ini dirancang untuk memberikan pengalaman belanja teh yang nyaman dan modern dengan tampilan yang responsif.
 
 ## Fitur Utama
-- **Navigasi Mudah**: Menu dropdown dengan kategori teh yang beragam.
-- **Tampilan Dinamis**: Carousel gambar untuk menampilkan produk unggulan.
-- **Desain Responsif**: Menggunakan Bootstrap agar kompatibel dengan berbagai perangkat.
-- **Tombol Pembelian Cepat**: Memudahkan pengguna untuk langsung melakukan pemesanan.
+- **Navigasi Mudah**: Menu dropdown dengan kategori teh yang beragam.  
+- **Tampilan Dinamis**: Carousel gambar untuk menampilkan produk unggulan.  
+- **Desain Responsif**: Menggunakan Bootstrap agar kompatibel dengan berbagai perangkat.  
+- **Tombol Pembelian Cepat**: Memudahkan pengguna untuk langsung melakukan pemesanan.  
+- **Efek Animasi**: Menggunakan AOS (Animate On Scroll) untuk tampilan yang lebih menarik.  
 
 ## Instalasi
-1. **Clone repositori** ini dengan perintah:
+1. **Clone repositori** ini dengan perintah:  
    ```sh
    git clone https://github.com/SukaMCD/leafly-tea.git
    ```
-2. **Masuk ke direktori proyek**:
+2. **Masuk ke direktori proyek**:  
    ```sh
    cd leafly-tea
    ```
-3. **Buka `index.html` di browser** untuk melihat tampilan website.
+3. **Buka `index.html` di browser** untuk melihat tampilan website.  
 
 ## Teknologi yang Digunakan
-- HTML5
-- CSS3
-- Bootstrap 5
-- AOS (Animate On Scroll)
+- **Frontend**: HTML5, CSS3, Bootstrap 5  
+- **Animasi**: AOS (Animate On Scroll)  
 
-## Cara Menggunakan
-1. Buka website di browser.
-2. Gunakan navbar untuk menavigasi ke bagian Best Seller, About Us, atau kategori teh.
-3. Klik tombol **Buy Now** untuk melakukan pembelian.
-4. Login untuk pengalaman yang lebih personal.
+## Cara Penggunaan
+1. **Buka website** di browser.  
+2. **Gunakan navbar** untuk menavigasi ke bagian Best Seller, About Us, atau kategori teh.  
+3. **Klik tombol "Buy Now"** untuk langsung melakukan pembelian.  
+4. **Login** untuk mendapatkan pengalaman yang lebih personal.  
 
 ## Kontribusi
-Jika ingin berkontribusi, silakan buat **pull request** atau ajukan **issue**.
+Kami sangat terbuka untuk kontribusi! Jika ingin berkontribusi:  
+- **Fork repositori ini** dan buat perubahan yang diperlukan.  
+- **Buat pull request** agar kami bisa meninjau dan menggabungkan kontribusi Anda.  
+- **Ajukan issue** jika menemukan bug atau ada fitur yang ingin ditambahkan.  
 
 ## Kontak
-Jika ada pertanyaan, hubungi kami di:
-Email: leaflytea.id@gmail.com
-Instagram: [Leafly Tea](https://www.instagram.com/leafly_tea/)
+Jika ada pertanyaan atau ingin bekerja sama, hubungi kami di:  
+📧 Email: leaflytea.id@gmail.com  
+📷 Instagram: [Leafly Tea](https://www.instagram.com/leafly_tea/)  
 
 ## Lisensi
-Proyek ini menggunakan lisensi **MIT**.
+Hak cipta © 2025 Leafly Tea.
+Kode dalam proyek ini hanya boleh digunakan untuk tujuan pengembangan bersama dengan izin pemilik.
+Untuk izin lebih lanjut, silakan hubungi leaflytea.id@gmail.com  .
 
 ---
-Dibuat oleh Tim Leafly Tea
