@@ -209,70 +209,64 @@
     </div>
   </section>
 
-  <!-- FILTER SECTION -->
+  <!-- PORTFOLIO SECTION -->
   <section class="portfolio py-5" id="portfolio">
-    <div class="container text-center py-5  ">
+    <div class="container text-center py-5">
       <h1 class="text-center pb-5">Portfolio.</h1>
-      <div class="control">
-        <ul data-aos="fade-up" data-aos-duration="500">
-          <li class="button active" data-filter="filter">All</li>
-          <li class="button active" data-filter="Brand">Brand</li>
-          <li class="button active" data-filter="Design">Design</li>
-          <li class="button active" data-filter="Graphic">Graphic</li>
-        </ul>
-      </div>
-      <div class="row pt-3">
-        <div class="col-lg-4">
-          <div class="item" data-aos="fade-down-right" data-aos-duration="2000">
-            <img src="image/512x512.png" class="img-fluid filter Brand Design Graphic" alt="">
-            <span><i class="fas fa-plus" data-toggle="modal" data-target="#portfoliomodal"></i></span>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="item" data-aos="fade-down" data-aos-duration="2000">
-            <img src="image/512x512.png" class="img-fluid filter Brand Design Graphic" alt="">
-            <span><i class="fas fa-plus" data-toggle="modal" data-target="#portfoliomodal"></i></span>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="item" data-aos="fade-down-left" data-aos-duration="2000">
-            <img src="image/512x512.png" class="img-fluid filter Brand Design" alt="">
-            <span><i class="fas fa-plus" data-toggle="modal" data-target="#portfoliomodal"></i></span>
-          </div>
-        </div>
-      </div>
-      <div class="row pt-3">
-        <div class="col-lg-4">
-          <div class="item" data-aos="fade-up-right" data-aos-duration="2000">
-            <img src="image/512x512.png" class="img-fluid filter Graphic" alt="">
-            <span><i class="fas fa-plus" data-toggle="modal" data-target="#portfoliomodal"></i></span>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="item" data-aos="fade-up" data-aos-duration="2000">
-            <img src="image/512x512.png" class="img-fluid filter Brand Design" alt="">
-            <span><i class="fas fa-plus" data-toggle="modal" data-target="#portfoliomodal"></i></span>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="item" data-aos="fade-up-left" data-aos-duration="2000">
-            <img src="image/512x512.png" class="img-fluid filter Design Graphic" alt="">
-            <span><i class="fas fa-plus" data-toggle="modal" data-target="#portfoliomodal"></i></span>
-          </div>
+
+      <!-- Portfolio items will be injected here by script.js -->
+      <div id="portfolio-grid" class="row pt-3"></div>
+
+      <!-- View More Projects Button -->
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <a href="https://github.com/SukaMCD" target="_blank" class="btn-view-more">
+            <span>View More Project</span>
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- MODAL SECTION -->
-  <div class="portfolio-modal modal fade mt-5" id="portfoliomodal" aria-hidden="true" role="dialog">
-    <div class="modal-dialog modal-md" role="document">
-      <div class="modal-content text-center">
-        <div class="modal-body text-center">
-          <div class="container-fluid py-3">
-            <div class="row justify-content-center">
-              <div class="col-lg-12">
-                <img src="image/512x512.png" class="img-fluid rounded" alt="">
+  <div class="portfolio-modal modal fade" id="portfoliomodal" tabindex="-1" aria-hidden="true" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body p-0 position-relative">
+          <button type="button" class="close position-absolute" data-dismiss="modal" aria-label="Close"
+            style="top: 15px; right: 20px; z-index: 10; font-size: 2rem; color: #333; opacity: 0.8;">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="container-fluid px-0">
+            <div class="row no-gutters">
+              <!-- Left Side - Image -->
+              <div class="col-md-5 modal-image-container">
+                <img id="modal-image" src="image/512x512.png" class="img-fluid" alt="">
+              </div>
+              <!-- Right Side - Details -->
+              <div class="col-md-7 p-4 p-md-5">
+                <h3 id="modal-title" class="font-weight-bold mb-3">Project Title</h3>
+                <p id="modal-description" class="text-muted mb-4" style="line-height: 1.6;">Project description goes
+                  here...</p>
+
+                <!-- Tags -->
+                <div class="mb-4">
+                  <h6 class="font-weight-bold mb-3"
+                    style="letter-spacing: 1px; font-size: 0.9rem; text-transform: uppercase; color: #555;">
+                    Technologies:</h6>
+                  <div id="modal-tags" class="d-flex flex-wrap">
+                    <!-- Tags will be inserted here dynamically -->
+                  </div>
+                </div>
+
+                <!-- View Project Button -->
+                <div class="mt-auto">
+                  <a id="modal-github-link" href="#" target="_blank" class="btn-github-modern">
+                    <i class="fab fa-github"></i>
+                    <span>View Project</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -389,6 +383,7 @@
   <script>
     AOS.init();
   </script>
+  <script src="projects.js"></script>
   <script src="script.js"></script>
 </body>
 

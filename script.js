@@ -1,33 +1,86 @@
-$(document).ready(function(){
-    $(".button").click(function(){
-        var value =$(this).attr("data-filter");
-        if(value=="all"){
-            $(".filter").show("100");
-        }
-        else{
-            $(".filter").not("."+value).hide("1000");
-            $(".filter").filter("."+value).show("1000");
-        }
-        $("ul .button").click(function(){
-            $(this).addClass('active').siblings().removeClass('active');
-        })
+$(document).ready(function () {
+  renderProjects();
+});
+
+function renderProjects() {
+  const container = document.getElementById("portfolio-grid");
+  if (!container) return;
+
+  container.innerHTML = portfolioProjects
+    .map((project, index) => {
+      // Determine AOS animation based on position
+      let animation = "fade-up";
+      if (index % 3 === 0) animation = "fade-up-right";
+      if (index % 3 === 2) animation = "fade-up-left";
+
+      return `
+      <div class="col-lg-4 mb-4">
+        <div class="item portfolio-item" data-aos="${animation}" data-aos-duration="2000"
+          data-title="${project.title}"
+          data-description="${project.description}"
+          data-tags="${project.tags.join(",")}"
+          data-github="${project.github}"
+          data-image="${project.image}"
+          onclick="openPortfolioModal(this)">
+          <img src="${project.image}" class="img-fluid" alt="${project.title}">
+          <div class="item-overlay">
+            <h5>${project.title}</h5>
+            <p>${project.description.split(".")[0]}.</p>
+          </div>
+        </div>
+      </div>
+    `;
     })
-})
+    .join("");
+}
 
-
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   emailjs.init("U85vb-TLi4QCplmwy");
 
   const form = document.getElementById("contact-form");
-  form.addEventListener("submit", function(event) {
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    emailjs.sendForm('service_i0zo3zo', 'template_m8ajqzd', this)
-      .then(function() {
+    emailjs.sendForm("service_i0zo3zo", "template_m8ajqzd", this).then(
+      function () {
         alert("Message sent successfully!");
         form.reset();
-      }, function(error) {
+      },
+      function (error) {
         alert("Failed to send message: " + JSON.stringify(error));
-      });
+      }
+    );
   });
 });
+
+// Function to open portfolio modal with data
+function openPortfolioModal(element) {
+  const title = element.getAttribute("data-title");
+  const description = element.getAttribute("data-description");
+  const tags = element.getAttribute("data-tags");
+  const github = element.getAttribute("data-github");
+  const image = element.getAttribute("data-image");
+
+  // Set modal content
+  document.getElementById("modal-title").textContent = title;
+  document.getElementById("modal-description").textContent = description;
+  document.getElementById("modal-github-link").href = github;
+  document.getElementById("modal-image").src = image;
+
+  // Create tags
+  const tagsContainer = document.getElementById("modal-tags");
+  tagsContainer.innerHTML = "";
+
+  if (tags) {
+    const tagArray = tags.split(",");
+    tagArray.forEach((tag) => {
+      const tagElement = document.createElement("span");
+      tagElement.className = "badge";
+      tagElement.textContent = tag.trim();
+      tagsContainer.appendChild(tagElement);
+    });
+  }
+
+  // Open modal
+  $("#portfoliomodal").modal("show");
+}
