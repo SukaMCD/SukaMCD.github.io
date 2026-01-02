@@ -6,14 +6,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: #0b0b0d;
+}
 html {
   scroll-behavior: smooth;
+  background-color: #0b0b0d;
 }
 .navbar {
-  background-color: white;
+  background-color: #0b0b0d;
 }
 .nav-link {
-  color: black;
+  color: white;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
@@ -21,63 +25,68 @@ html {
 }
 .nav-link:hover {
   color: white;
-  background-color: black;
+  background-color: #333;
 }
 .navbar-brand {
   font-size: 1.25rem;
   font-weight: 800;
-  color: black;
+  color: white;
   cursor: pointer;
   text-decoration: none;
 }
 .navbar-brand:hover {
-  color: black;
+  color: white;
 }
 .main {
-  background: url("image/gambar (2) (1).png");
+  background: #0b0b0d url("image/main.png");
   background-size: cover;
+  background-color: #0b0b0d;
   width: 100%;
   height: 100vh;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 .main h3 {
   font-size: 4.4rem;
   font-weight: 700;
+  color: white;
 }
 .main h6 {
   font-size: 1.4rem;
   text-transform: uppercase;
   line-height: 1;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid white;
   width: 42%;
+  color: white;
 }
 .main .bt1 {
   height: 55px;
   width: 138px;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   outline: none;
   border: none;
   font-weight: bold;
   border-radius: 5px;
 }
 .main .bt1:hover {
-  background-color: #222222;
+  background-color: rgb(216, 216, 216);
   transition: 0.5s;
 }
 .main .bt2 {
   height: 55px;
   width: 138px;
   background-color: transparent;
-  color: black;
+  color: white;
   outline: none;
-  border: 1px solid black;
+  border: 1px solid white;
   font-weight: bold;
   border-radius: 5px;
 }
 .main .bt2:hover {
-  background-color: black;
+  background-color: white;
   transition: 0.5s;
-  color: white;
+  color: black;
 }
 .social-links {
   display: flex;
@@ -88,7 +97,7 @@ html {
   margin: 0;
   font-size: 1rem;
   font-weight: 500;
-  color: #333;
+  color: white;
 }
 .social-icon {
   display: inline-flex;
@@ -96,31 +105,41 @@ html {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: #f0f0f0;
-  color: #333;
+  background-color: white;
+  color: black;
   border-radius: 50%;
   text-decoration: none;
   font-size: 18px;
   transition: all 0.3s ease;
 }
 .social-icon:hover {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.about {
+  background-color: #101010;
+  color: white;
+}
 .about img {
   box-shadow: 0px 0px 12px 5px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 0px 12px 5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 12px 5px rgba(0, 0, 0, 0.75);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.about p {
+  color: white;
 }
 h1 {
   font-size: 3rem;
   font-weight: 900;
+  color: white;
 }
 .progress {
-  background-color: rgb(233, 219, 209);
+  background-color: #2d2d2d;
   justify-content: flex-start;
   border-radius: 50px;
   align-items: center;
@@ -201,37 +220,44 @@ h1 {
   width: 145px;
   outline: none;
   border: none;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   border-radius: 4px;
 }
 .btn1:hover {
   background-color: transparent;
-  color: black;
-  border: 1px solid black;
+  color: white;
+  border: 1px solid white;
   transition: 0.5s;
 }
 .btn2 {
   height: 40px;
   width: 145px;
   outline: none;
-  border: 1px solid black;
+  border: 1px solid white;
   background-color: transparent;
-  color: black;
+  color: white;
   border-radius: 4px;
 }
 .btn2:hover {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   border: none;
   transition: 0.5s;
 }
 /* Tech Stack Styling */
+.tech-stack {
+  background-color: #0b0b0d;
+  color: white;
+}
+.text-muted {
+  color: #ccc !important;
+}
 .tech-stack .tech-card {
-  background: #ffffff;
+  background: #101010;
   border-radius: 20px;
   padding: 30px 20px;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #444;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   user-select: none;
@@ -241,7 +267,7 @@ h1 {
 .tech-stack .tech-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  border-color: #000;
+  border-color: white;
 }
 
 .tech-category {
@@ -250,7 +276,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 25px;
-  color: #111;
+  color: white;
   text-align: center;
   position: relative;
 }
@@ -263,7 +289,7 @@ h1 {
   transform: translateX(-50%);
   width: 30px;
   height: 2px;
-  background: #000;
+  background: white;
 }
 
 .tech-list {
@@ -291,7 +317,7 @@ h1 {
 .tech-item span {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #777;
+  color: #ccc;
 }
 
 /* Hover Colors for Tech Items */
@@ -339,15 +365,15 @@ h1 {
 }
 
 .tech-item:hover {
-  background: #fcfcfc;
+  background: #333;
 }
 
 .tech-item:hover span {
-  color: #000;
+  color: white;
 }
 .control ul li {
   list-style: none;
-  background-color: black;
+  background-color: #2d2d2d;
   padding: 5px 15px;
   color: white;
   display: inline-block;
@@ -356,8 +382,8 @@ h1 {
 }
 .item {
   position: relative;
-  background-color: #f8f9fa; /* Light background for logos/transparent images */
-  border: 1px solid #eeeeee; /* Subtle border for definition */
+  background-color: #2d2d2d; /* Light background for logos/transparent images */
+  border: 1px solid #444; /* Subtle border for definition */
   border-radius: 20px; /* Modern rounded corners */
   overflow: hidden;
   aspect-ratio: 1 / 1; /* Force square shape for consistency */
@@ -397,14 +423,14 @@ h1 {
   z-index: 2;
 }
 .item-overlay h5 {
-  color: black;
+  color: white;
   font-weight: bold;
   font-size: 1.5rem;
   margin-bottom: 10px;
   text-align: center;
 }
 .item-overlay p {
-  color: #333;
+  color: #ccc;
   font-size: 0.95rem;
   text-align: center;
   margin: 0;
@@ -419,7 +445,7 @@ h1 {
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(234, 235, 230, 0.85);
+  background-color: rgba(16, 16, 16, 0.85);
   opacity: 0;
   position: absolute;
   z-index: 1;
@@ -428,11 +454,47 @@ h1 {
 .item:hover:before {
   opacity: 1;
 }
+.blog {
+  background-color: #0b0b0d;
+  color: white;
+}
+.blog .card {
+  background-color: #2d2d2d;
+  border: 1px solid #444;
+  color: white;
+}
+.blog .card h5,
+.blog .card small,
+.blog .card a {
+  color: white;
+}
+#contact {
+  background-color: #101010;
+  color: white;
+}
+#contact h1,
+#contact h5,
+#contact p {
+  color: white;
+}
+#contact .form-control {
+  background-color: #2d2d2d !important;
+  border: 1px solid #444 !important;
+  color: white !important;
+}
+#contact .form-control::placeholder {
+  color: #999 !important;
+}
+#contact .form-control:focus {
+  background-color: #2d2d2d !important;
+  border-color: white !important;
+  color: white !important;
+}
 #contact .circle {
   height: 70px;
   width: 70px;
-  background-color: lightgray;
-  color: black;
+  background-color: #333;
+  color: white;
   padding: 12px;
   font-size: 30px;
   border-radius: 50%;
@@ -441,13 +503,13 @@ h1 {
 }
 
 #contact .circle:hover {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   transition: 0.5s;
 }
 .contact .btn3 {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   outline: none;
   border: none;
   height: 40px;
@@ -456,18 +518,24 @@ h1 {
 }
 .btn3:hover {
   background: transparent;
-  color: black;
+  color: white;
   transition: 0.4s;
-  border: 1px solid black;
+  border: 1px solid white;
 }
 footer {
-  background-color: rgb(58, 52, 52);
+  background-color: #0b0b0d;
   color: lightgrey;
 }
 
 /* Portfolio Item Clickable */
+.portfolio {
+  background-color: #101010;
+  color: white;
+}
 .portfolio-item {
   cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 /* Click Spark Canvas */
@@ -491,7 +559,7 @@ footer {
 
 .modal-image-container {
   overflow: hidden;
-  background-color: #f8f9fa;
+  background-color: #0b0b0d;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -523,17 +591,17 @@ footer {
 }
 
 .modal-description-scroll::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #333;
   border-radius: 10px;
 }
 
 .modal-description-scroll::-webkit-scrollbar-thumb {
-  background: #ccc;
+  background: #666;
   border-radius: 10px;
 }
 
 .modal-description-scroll::-webkit-scrollbar-thumb:hover {
-  background: #999;
+  background: #888;
 }
 
 .portfolio-modal:hover #modal-image {
@@ -541,7 +609,16 @@ footer {
 }
 
 .portfolio-modal .modal-body {
-  background: #ffffff;
+  background: #0b0b0d;
+  color: white;
+}
+.portfolio-modal .modal-body h3,
+.portfolio-modal .modal-body h6,
+.portfolio-modal .modal-body p {
+  color: white;
+}
+.modal-details-container {
+  background-color: #0b0b0d;
 }
 
 /* Tags refined */
@@ -549,19 +626,21 @@ footer {
   font-size: 0.75rem;
   font-weight: 500;
   padding: 6px 14px;
-  background-color: #eef2ff;
-  color: #4f46e5;
+  background-color: #333;
+  color: white;
   border-radius: 100px;
   margin-right: 8px;
   margin-bottom: 8px;
-  border: 1px solid #e0e7ff;
+  border: 1px solid #555;
   transition: all 0.2s ease;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .portfolio-modal .badge:hover {
-  background-color: black;
-  color: white;
-  border-color: black;
+  background-color: white;
+  color: black;
+  border-color: white;
 }
 
 /* GitHub Button refined */
@@ -569,22 +648,22 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: #111;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 10px 20px;
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid #111;
+  border: 1px solid white;
 }
 
 .btn-github-modern:hover {
-  background-color: #222222;
-  color: white;
+  background-color: rgb(234, 231, 231);
+  color: black;
   text-decoration: none;
-  border-color: #222222;
+  border-color: white;
   transform: translateY(-3px);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 80, 0.3);
 }
@@ -598,7 +677,7 @@ footer {
   right: 20px;
   z-index: 10;
   font-size: 2rem;
-  color: #333;
+  color: white;
   opacity: 0.8;
   transition: all 0.3s ease;
   outline: none !important;
@@ -622,9 +701,9 @@ footer {
   align-items: center;
   gap: 12px;
   background-color: transparent;
-  color: black;
+  color: white;
   padding: 12px 30px;
-  border: 2px solid black;
+  border: 2px solid white;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 700;
@@ -632,11 +711,13 @@ footer {
   letter-spacing: 1px;
   font-size: 0.9rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .btn-view-more:hover {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   text-decoration: none;
   transform: translateY(-5px);
   box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.3);

@@ -3,7 +3,7 @@ $(document).ready(function () {
 
   // Initialize ClickSpark after DOM is ready
   new ClickSpark({
-    sparkColor: "#333", // Dark gray for visibility
+    sparkColor: "white", // White for visibility
     sparkSize: 12,
     sparkRadius: 40, // Increased radius for better visibility
     sparkCount: 10,
@@ -142,7 +142,7 @@ document.querySelectorAll(".scroll-link").forEach((link) => {
  */
 class ClickSpark {
   constructor(options = {}) {
-    this.sparkColor = options.sparkColor || "#000";
+    this.sparkColor = options.sparkColor || "white";
     this.sparkSize = options.sparkSize || 10;
     this.sparkRadius = options.sparkRadius || 15;
     this.sparkCount = options.sparkCount || 8;
