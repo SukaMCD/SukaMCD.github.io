@@ -47,13 +47,13 @@ html {
   font-size: 1.4rem;
   text-transform: uppercase;
   line-height: 1;
-  border-bottom: 3px solid #0000ff;
+  border-bottom: 3px solid black;
   width: 42%;
 }
 .main .bt1 {
   height: 55px;
   width: 138px;
-  background-color: #0000ff;
+  background-color: black;
   color: white;
   outline: none;
   border: none;
@@ -61,21 +61,21 @@ html {
   border-radius: 5px;
 }
 .main .bt1:hover {
-  background-color: #00008a;
+  background-color: #222222;
   transition: 0.5s;
 }
 .main .bt2 {
   height: 55px;
   width: 138px;
   background-color: transparent;
-  color: #0000ff;
+  color: black;
   outline: none;
-  border: 1px solid #0000ff;
+  border: 1px solid black;
   font-weight: bold;
   border-radius: 5px;
 }
 .main .bt2:hover {
-  background-color: #0000ff;
+  background-color: black;
   transition: 0.5s;
   color: white;
 }
@@ -104,7 +104,7 @@ html {
   transition: all 0.3s ease;
 }
 .social-icon:hover {
-  background-color: #0000ff;
+  background-color: black;
   color: white;
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -443,9 +443,9 @@ footer {
 }
 
 .portfolio-modal .badge:hover {
-  background-color: #0000ff;
+  background-color: black;
   color: white;
-  border-color: #0000ff;
+  border-color: black;
 }
 
 /* GitHub Button refined */
