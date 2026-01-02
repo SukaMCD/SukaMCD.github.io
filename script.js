@@ -25,7 +25,7 @@ function renderProjects() {
           data-title="${project.title}"
           data-description="${project.description}"
           data-tags="${project.tags.join(",")}"
-          data-github="${project.github}"
+          data-links='${JSON.stringify(project.links)}'
           data-image="${project.image}"
           onclick="openPortfolioModal(this)">
           <img src="${project.image}" class="img-fluid" alt="${project.title}">
@@ -68,20 +68,18 @@ function openPortfolioModal(element) {
   const title = element.getAttribute("data-title");
   const description = element.getAttribute("data-description");
   const tags = element.getAttribute("data-tags");
-  const github = element.getAttribute("data-github");
+  const linksData = element.getAttribute("data-links");
   const image = element.getAttribute("data-image");
 
   document.getElementById("modal-title").textContent = title;
   document.getElementById("modal-description").textContent = description;
-  document.getElementById("modal-github-link").href = github;
   document.getElementById("modal-image").src = image;
 
+  // Handle tags
   const tagsContainer = document.getElementById("modal-tags");
   tagsContainer.innerHTML = "";
-
   if (tags) {
-    const tagArray = tags.split(",");
-    tagArray.forEach((tag) => {
+    tags.split(",").forEach((tag) => {
       const tagElement = document.createElement("span");
       tagElement.className = "badge";
       tagElement.textContent = tag.trim();
@@ -89,17 +87,41 @@ function openPortfolioModal(element) {
     });
   }
 
+  // Handle multiple links
+  const linksContainer = document.getElementById("modal-links-container");
+  linksContainer.innerHTML = "";
+  if (linksData) {
+    const links = JSON.parse(linksData);
+    links.forEach((link) => {
+      const btn = document.createElement("a");
+      btn.href = link.url;
+      btn.target = "_blank";
+      btn.className = "btn-github-modern mb-2 mr-2";
+
+      // Use GitHub icon for "View Project", globe for others
+      const iconClass = link.label.toLowerCase().includes("project")
+        ? "fab fa-github"
+        : "fas fa-globe";
+
+      btn.innerHTML = `
+        <i class="${iconClass}"></i>
+        <span>${link.label}</span>
+      `;
+      linksContainer.appendChild(btn);
+    });
+  }
+
   $("#portfoliomodal").modal("show");
 }
 
-document.querySelectorAll('.scroll-link').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault(); 
-    const targetId = this.getAttribute('href');
+document.querySelectorAll(".scroll-link").forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href");
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
       targetElement.scrollIntoView({
-        behavior: 'smooth' 
+        behavior: "smooth",
       });
     }
   });
