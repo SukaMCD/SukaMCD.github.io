@@ -232,8 +232,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-body p-0 position-relative">
-          <button type="button" class="close position-absolute" data-dismiss="modal" aria-label="Close"
-            style="top: 15px; right: 20px; z-index: 10; font-size: 2rem; color: #333; opacity: 0.8;">
+          <button type="button" class="close position-absolute" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
           <div class="container-fluid px-0">
@@ -243,27 +242,33 @@
                 <img id="modal-image" src="image/512x512.png" class="img-fluid" alt="">
               </div>
               <!-- Right Side - Details -->
-              <div class="col-md-7 p-4 p-md-5">
-                <h3 id="modal-title" class="font-weight-bold mb-3">Project Title</h3>
-                <p id="modal-description" class="text-muted mb-4" style="line-height: 1.6;">Project description goes
-                  here...</p>
+              <div class="col-md-7 d-flex flex-column modal-details-container">
+                <div class="p-4 p-md-5 d-flex flex-column h-100">
+                  <h3 id="modal-title" class="font-weight-bold mb-3">Project Title</h3>
 
-                <!-- Tags -->
-                <div class="mb-4">
-                  <h6 class="font-weight-bold mb-3"
-                    style="letter-spacing: 1px; font-size: 0.9rem; text-transform: uppercase; color: #555;">
-                    Technologies:</h6>
-                  <div id="modal-tags" class="d-flex flex-wrap">
-                    <!-- Tags will be inserted here dynamically -->
+                  <!-- Scrollable Description -->
+                  <div class="modal-description-scroll mb-4">
+                    <p id="modal-description" class="text-muted mb-0" style="line-height: 1.6;">Project description goes
+                      here...</p>
                   </div>
-                </div>
 
-                <!-- View Project Button -->
-                <div class="mt-auto">
-                  <a id="modal-github-link" href="#" target="_blank" class="btn-github-modern">
-                    <i class="fab fa-github"></i>
-                    <span>View Project</span>
-                  </a>
+                  <!-- Tags (Fixed) -->
+                  <div class="mb-4">
+                    <h6 class="font-weight-bold mb-3"
+                      style="letter-spacing: 1px; font-size: 0.9rem; text-transform: uppercase; color: #555;">
+                      Technologies:</h6>
+                    <div id="modal-tags" class="d-flex flex-wrap">
+                      <!-- Tags will be inserted here dynamically -->
+                    </div>
+                  </div>
+
+                  <!-- View Project Button (Fixed at bottom) -->
+                  <div class="mt-auto">
+                    <a id="modal-github-link" href="#" target="_blank" class="btn-github-modern">
+                      <i class="fab fa-github"></i>
+                      <span>View Project</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

@@ -34,7 +34,7 @@ html {
   color: black;
 }
 .main {
-  background: url(image/gambar\ \(2\)\ \(1\).png);
+  background: url("image/gambar (2) (1).png");
   background-size: cover;
   width: 100%;
   height: 100vh;
@@ -282,7 +282,7 @@ h1 {
   align-items: center;
   padding: 20px;
   opacity: 0;
-  transition: 0.5s;
+  transition: all 0.4s ease-in-out;
   z-index: 2;
 }
 .item-overlay h5 {
@@ -301,7 +301,6 @@ h1 {
 }
 .item:hover .item-overlay {
   opacity: 1;
-  transition: 0.5s;
 }
 .item:before {
   content: "";
@@ -309,14 +308,14 @@ h1 {
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(234, 235, 230, 0.95);
+  background-color: rgba(234, 235, 230, 0.85);
   opacity: 0;
   position: absolute;
   z-index: 1;
+  transition: all 0.4s ease-in-out;
 }
 .item:hover:before {
   opacity: 1;
-  transition: 0.3s;
 }
 .circle:hover {
   background-color: black;
@@ -362,7 +361,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 350px;
+  height: 450px; /* Fixed height for consistency */
 }
 
 .portfolio-modal #modal-image {
@@ -370,6 +369,37 @@ footer {
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+}
+
+.modal-details-container {
+  height: 450px; /* Matches image container height */
+  overflow: hidden;
+}
+
+.modal-description-scroll {
+  flex: 1; /* Takes available space */
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Custom Scrollbar for description */
+.modal-description-scroll::-webkit-scrollbar {
+  width: 5px;
+  display: block; /* Show only for this container */
+}
+
+.modal-description-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.modal-description-scroll::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.modal-description-scroll::-webkit-scrollbar-thumb:hover {
+  background: #999;
 }
 
 .portfolio-modal:hover #modal-image {
@@ -429,9 +459,27 @@ footer {
   font-size: 1.2rem;
 }
 
+.portfolio-modal .close {
+  top: 15px;
+  right: 20px;
+  z-index: 10;
+  font-size: 2rem;
+  color: #333;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.portfolio-modal .close:focus,
+.portfolio-modal .close:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .portfolio-modal .close:hover {
   transform: rotate(90deg);
-  transition: transform 0.3s ease;
+  opacity: 1;
 }
 
 /* View More Projects Button */
