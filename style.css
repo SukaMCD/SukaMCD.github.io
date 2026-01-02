@@ -47,13 +47,13 @@ html {
   font-size: 1.4rem;
   text-transform: uppercase;
   line-height: 1;
-  border-bottom: 3px solid rgb(41, 173, 255);
+  border-bottom: 3px solid #0000FF;
   width: 42%;
 }
 .main .bt1 {
   height: 55px;
   width: 138px;
-  background-color: rgb(41, 173, 255);
+  background-color: #0000FF;
   color: white;
   outline: none;
   border: none;
@@ -61,21 +61,21 @@ html {
   border-radius: 5px;
 }
 .main .bt1:hover {
-  background-color: rgb(28, 150, 237);
+  background-color: #00008A;
   transition: 0.5s;
 }
 .main .bt2 {
   height: 55px;
   width: 138px;
   background-color: transparent;
-  color: rgb(41, 173, 255);
+  color: #0000FF;
   outline: none;
-  border: 1px solid rgb(41, 173, 255);
+  border: 1px solid #0000FF;
   font-weight: bold;
   border-radius: 5px;
 }
 .main .bt2:hover {
-  background-color: rgb(41, 173, 255);
+  background-color: #0000FF;
   transition: 0.5s;
   color: white;
 }
