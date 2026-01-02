@@ -6,6 +6,14 @@ function renderProjects() {
   const container = document.getElementById("portfolio-grid");
   if (!container) return;
 
+  // Check if portfolioProjects is defined
+  if (typeof portfolioProjects === "undefined") {
+    console.error("Portfolio data (projects.js) not found!");
+    container.innerHTML =
+      '<div class="col-12 text-center text-danger">Data project tidak dapat dimuat. Pastikan projects.js sudah di-upload.</div>';
+    return;
+  }
+
   container.innerHTML = portfolioProjects
     .map((project, index) => {
       // Determine AOS animation based on position
@@ -32,6 +40,12 @@ function renderProjects() {
     `;
     })
     .join("");
+
+  // Re-initialize or refresh AOS to detect new elements
+  if (typeof AOS !== "undefined") {
+    AOS.init();
+    AOS.refresh();
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
