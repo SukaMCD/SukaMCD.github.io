@@ -6,7 +6,6 @@ function renderProjects() {
   const container = document.getElementById("portfolio-grid");
   if (!container) return;
 
-  // Check if portfolioProjects is defined
   if (typeof portfolioProjects === "undefined") {
     console.error("Portfolio data (projects.js) not found!");
     container.innerHTML =
@@ -16,7 +15,6 @@ function renderProjects() {
 
   container.innerHTML = portfolioProjects
     .map((project, index) => {
-      // Determine AOS animation based on position
       let animation = "fade-up";
       if (index % 3 === 0) animation = "fade-up-right";
       if (index % 3 === 2) animation = "fade-up-left";
@@ -41,7 +39,6 @@ function renderProjects() {
     })
     .join("");
 
-  // Re-initialize or refresh AOS to detect new elements
   if (typeof AOS !== "undefined") {
     AOS.init();
     AOS.refresh();
@@ -67,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Function to open portfolio modal with data
 function openPortfolioModal(element) {
   const title = element.getAttribute("data-title");
   const description = element.getAttribute("data-description");
@@ -75,13 +71,11 @@ function openPortfolioModal(element) {
   const github = element.getAttribute("data-github");
   const image = element.getAttribute("data-image");
 
-  // Set modal content
   document.getElementById("modal-title").textContent = title;
   document.getElementById("modal-description").textContent = description;
   document.getElementById("modal-github-link").href = github;
   document.getElementById("modal-image").src = image;
 
-  // Create tags
   const tagsContainer = document.getElementById("modal-tags");
   tagsContainer.innerHTML = "";
 
@@ -95,6 +89,18 @@ function openPortfolioModal(element) {
     });
   }
 
-  // Open modal
   $("#portfoliomodal").modal("show");
 }
+
+document.querySelectorAll('.scroll-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault(); 
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth' 
+      });
+    }
+  });
+});
