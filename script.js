@@ -13,3 +13,21 @@ $(document).ready(function(){
         })
     })
 })
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  emailjs.init("U85vb-TLi4QCplmwy");
+
+  const form = document.getElementById("contact-form");
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm('service_i0zo3zo', 'template_m8ajqzd', this)
+      .then(function() {
+        alert("Message sent successfully!");
+        form.reset();
+      }, function(error) {
+        alert("Failed to send message: " + JSON.stringify(error));
+      });
+  });
+});
