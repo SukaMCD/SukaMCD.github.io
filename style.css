@@ -47,13 +47,13 @@ html {
   font-size: 1.4rem;
   text-transform: uppercase;
   line-height: 1;
-  border-bottom: 3px solid #0000FF;
+  border-bottom: 3px solid #0000ff;
   width: 42%;
 }
 .main .bt1 {
   height: 55px;
   width: 138px;
-  background-color: #0000FF;
+  background-color: #0000ff;
   color: white;
   outline: none;
   border: none;
@@ -61,24 +61,55 @@ html {
   border-radius: 5px;
 }
 .main .bt1:hover {
-  background-color: #00008A;
+  background-color: #00008a;
   transition: 0.5s;
 }
 .main .bt2 {
   height: 55px;
   width: 138px;
   background-color: transparent;
-  color: #0000FF;
+  color: #0000ff;
   outline: none;
-  border: 1px solid #0000FF;
+  border: 1px solid #0000ff;
   font-weight: bold;
   border-radius: 5px;
 }
 .main .bt2:hover {
-  background-color: #0000FF;
+  background-color: #0000ff;
   transition: 0.5s;
   color: white;
 }
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.social-links p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+.social-icon:hover {
+  background-color: #0000ff;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .about img {
   box-shadow: 0px 0px 12px 5px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 0px 12px 5px rgba(0, 0, 0, 0.75);
