@@ -5,10 +5,8 @@ const portfolioProjects = [
       "Leafly Tea adalah website e-commerce yang dibuat untuk menjual produk-produk dari brand Leafly Tea. Website ini dibangun menggunakan PHP, HTML, CSS, dan JavaScript, serta menggunakan MySQL sebagai database. Untuk tampilan dan animasi, project ini juga memanfaatkan framework Bootstrap dan library JavaScript AOS (Animate On Scroll) agar lebih menarik secara visual.",
     tags: ["E-Commerce", "PHP", "MySQL", "Bootstrap"],
     links: [
-      {
-        label: "Leafly Tea",
-        url: "https://budiluhurdigital.com/project/10RPL/LeaflyTea/",
-      },
+      {label: "View Project", url: "https://github.com/SukaMCD/LeaflyTea" },
+      {label: "Leafly Tea", url: "https://budiluhurdigital.com/project/10RPL/LeaflyTea/" },
     ],
     image: "image/imgporto1.png",
   },
@@ -18,10 +16,8 @@ const portfolioProjects = [
       "Lost Formula: A Forest Mystery adalah proyek game dengan genre top-down adventure yang dikembangkan menggunakan Godot Engine 4. Game ini mengambil latar hutan misterius dan menghadirkan pengalaman eksplorasi serta narasi yang penuh teka-teki.",
     tags: ["Game Dev", "Godot Engine", "Adventure", "Top-down"],
     links: [
-      {
-        label: "Lost Formula",
-        url: "https://sukamcd.itch.io/lost-formula-a-forest-mystery",
-      },
+      {label: "View Project", url: "https://github.com/SukaMCD/lost-formula" },
+      {label: "Lost Formula", url: "https://sukamcd.itch.io/lost-formula-a-forest-mystery" },
     ],
     image: "image/imgporto2.png",
   },
