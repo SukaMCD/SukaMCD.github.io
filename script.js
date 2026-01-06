@@ -13,30 +13,42 @@ $(document).ready(function () {
     }
   });
 
-  // Cursor Glow Logic
-  const glow = document.createElement("div");
-  glow.className = "cursor-glow";
-  document.body.appendChild(glow);
+  // Initialize Cursor Effects (Glow + ClickSpark)
+  if (typeof initCursorEffects !== "undefined") {
+    initCursorEffects({
+      sparkColor: "white",
+      sparkSize: 12,
+      sparkRadius: 40,
+      sparkCount: 10,
+      duration: 500,
+    });
+  }
 
-  $(document).on("mousemove", function (e) {
-    const posX = e.clientX;
-    const posY = e.clientY;
+  // Module X14 Configuration
+  const _0x1a2b = document.getElementById("u9p2v5");
+  const _0x3c4d = document.getElementById("k3j8w1");
 
-    // Glow follows
-    glow.style.left = posX + "px";
-    glow.style.top = posY + "px";
-  });
+  if (_0x1a2b) {
+    _0x1a2b.addEventListener("click", () => {
+      $("#m7k4x9").modal("show");
+      setTimeout(() => {
+        if (_0x3c4d) _0x3c4d.focus();
+      }, 500);
+    });
+  }
 
-  // Handle Hover States (Removed custom cursor class toggle as it's now handled by CSS cursor: url)
-
-  // Initialize ClickSpark after DOM is ready
-  new ClickSpark({
-    sparkColor: "white", // White for visibility
-    sparkSize: 12,
-    sparkRadius: 40, // Increased radius for better visibility
-    sparkCount: 10,
-    duration: 500,
-  });
+  if (_0x3c4d) {
+    _0x3c4d.addEventListener("input", (e) => {
+      if (e.target.value.toLowerCase() === "dino") {
+        _0x3c4d.style.color = "#000";
+        _0x3c4d.style.background = "#0f0";
+        sessionStorage.setItem("_0xd1n0_4cc3ss", "v4l1d_" + Date.now());
+        setTimeout(() => {
+          window.location.href = "x7r4w2/v7b2m9.html";
+        }, 800);
+      }
+    });
+  }
 });
 
 function initTypingEffect() {
@@ -296,101 +308,4 @@ document.querySelectorAll(".scroll-link").forEach((link) => {
   });
 });
 
-/**
- * ClickSpark - Vanilla JS Version
- * Ported from the React-bits component provided in click spark.txt
- */
-class ClickSpark {
-  constructor(options = {}) {
-    this.sparkColor = options.sparkColor || "white";
-    this.sparkSize = options.sparkSize || 10;
-    this.sparkRadius = options.sparkRadius || 15;
-    this.sparkCount = options.sparkCount || 8;
-    this.duration = options.duration || 400;
-    this.easing = options.easing || "ease-out";
-    this.extraScale = options.extraScale || 1.0;
-
-    this.sparks = [];
-    this.canvas = document.createElement("canvas");
-    this.ctx = this.canvas.getContext("2d");
-
-    this.init();
-  }
-
-  init() {
-    this.canvas.id = "click-spark-canvas";
-    document.body.appendChild(this.canvas);
-
-    this.handleResize();
-    window.addEventListener("resize", () => this.handleResize());
-
-    document.addEventListener("mousedown", (e) => this.handleClick(e));
-
-    const animate = (timestamp) => {
-      this.draw(timestamp);
-      requestAnimationFrame(animate);
-    };
-    requestAnimationFrame(animate);
-  }
-
-  handleResize() {
-    this.canvas.width = window.innerWidth;
-    this.canvas.height = window.innerHeight;
-  }
-
-  easeFunc(t) {
-    switch (this.easing) {
-      case "linear":
-        return t;
-      case "ease-in":
-        return t * t;
-      case "ease-in-out":
-        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-      default:
-        return t * (2 - t);
-    }
-  }
-
-  handleClick(e) {
-    const now = performance.now();
-    const newSparks = Array.from({ length: this.sparkCount }, (_, i) => ({
-      x: e.clientX,
-      y: e.clientY,
-      angle: (2 * Math.PI * i) / this.sparkCount,
-      startTime: now,
-    }));
-    this.sparks.push(...newSparks);
-  }
-
-  draw(timestamp) {
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-    this.sparks = this.sparks.filter((spark) => {
-      const elapsed = timestamp - spark.startTime;
-      if (elapsed >= this.duration) return false;
-
-      const progress = elapsed / this.duration;
-      const eased = this.easeFunc(progress);
-
-      const distance = eased * this.sparkRadius * this.extraScale;
-      const lineLength = this.sparkSize * (1 - eased);
-
-      const x1 = spark.x + distance * Math.cos(spark.angle);
-      const y1 = spark.y + distance * Math.sin(spark.angle);
-      const x2 = spark.x + (distance + lineLength) * Math.cos(spark.angle);
-      const y2 = spark.y + (distance + lineLength) * Math.sin(spark.angle);
-
-      this.ctx.strokeStyle = this.sparkColor;
-      this.ctx.lineWidth = 2;
-      this.ctx.lineCap = "round";
-      this.ctx.beginPath();
-      this.ctx.moveTo(x1, y1);
-      this.ctx.lineTo(x2, y2);
-      this.ctx.stroke();
-
-      return true;
-    });
-  }
-}
-
-// ClickSpark class definition ends here
+// ClickSpark class sudah dipindahkan ke js/cursor-effects.js

@@ -1072,3 +1072,13 @@ footer {
 .btn-view-more:hover i {
   transform: translateX(5px);
 }
+
+/* Secret Easter Egg Trigger */
+#u9p2v5 {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#u9p2v5:hover {
+  opacity: 0.8;
+}
