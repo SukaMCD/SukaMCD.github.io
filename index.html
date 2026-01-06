@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
+    <script src="config.js"></script>
     <script>
-        const isMaintenance = false;
         if (isMaintenance && !window.location.pathname.includes("maintenance.html")) {
             window.location.href = "maintenance.html";
         }
