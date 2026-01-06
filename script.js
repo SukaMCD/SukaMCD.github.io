@@ -1,5 +1,32 @@
 $(document).ready(function () {
   renderProjects();
+  initTypingEffect();
+  initMobileCarousels();
+
+  // Glassmorphism Navbar Logic
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 50) {
+      $(".navbar").addClass("scrolled");
+    } else {
+      $(".navbar").removeClass("scrolled");
+    }
+  });
+
+  // Cursor Glow Logic
+  const glow = document.createElement("div");
+  glow.className = "cursor-glow";
+  document.body.appendChild(glow);
+
+  $(document).on("mousemove", function (e) {
+    const posX = e.clientX;
+    const posY = e.clientY;
+
+    // Glow follows
+    glow.style.left = posX + "px";
+    glow.style.top = posY + "px";
+  });
+
+  // Handle Hover States (Removed custom cursor class toggle as it's now handled by CSS cursor: url)
 
   // Initialize ClickSpark after DOM is ready
   new ClickSpark({
@@ -10,6 +37,91 @@ $(document).ready(function () {
     duration: 500,
   });
 });
+
+function initTypingEffect() {
+  const textElement = document.getElementById("typing-text");
+  const words = ["Software Engineer Student", "Web Developer", "Programmer"];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typeSpeed = 100;
+
+  function type() {
+    const currentWord = words[wordIndex];
+    if (isDeleting) {
+      charIndex--;
+      typeSpeed = 50;
+    } else {
+      charIndex++;
+      typeSpeed = 150;
+    }
+
+    textElement.textContent = currentWord.substring(0, charIndex);
+
+    if (!isDeleting && charIndex === currentWord.length) {
+      isDeleting = true;
+      typeSpeed = 2000; // Pause at end
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      typeSpeed = 500;
+    }
+
+    // Add cursor
+    textElement.innerHTML += '<span class="typing-cursor"></span>';
+
+    setTimeout(type, typeSpeed);
+  }
+
+  if (textElement) type();
+}
+
+function initMobileCarousels() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 991, // Disable on desktop
+        settings: "unslick",
+      },
+    ],
+  };
+
+  // Tech Stack Carousel
+  const $techRow = $("#services .row");
+  if ($(window).width() < 992) {
+    if (!$techRow.hasClass("slick-initialized")) {
+      $techRow.slick(settings);
+    }
+  }
+
+  // Portfolio Carousel (Wait for projects to render)
+  setTimeout(() => {
+    const $portRow = $("#portfolio-grid");
+    if ($(window).width() < 992) {
+      if (!$portRow.hasClass("slick-initialized")) {
+        $portRow.slick(settings);
+      }
+    }
+  }, 100);
+
+  // Re-check on resize
+  $(window).on("resize", function () {
+    if ($(window).width() < 992) {
+      if (!$techRow.hasClass("slick-initialized")) $techRow.slick(settings);
+      const $portRow = $("#portfolio-grid");
+      if (!$portRow.hasClass("slick-initialized")) $portRow.slick(settings);
+    }
+  });
+}
 
 function renderProjects() {
   const container = document.getElementById("portfolio-grid");

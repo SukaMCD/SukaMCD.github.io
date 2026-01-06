@@ -8,13 +8,117 @@
 }
 body {
   background-color: #0b0b0d;
+  cursor: url("assets/light/arrow.cur"), auto;
+  overflow-x: hidden; /* Fix horizontal scroll bug */
+  width: 100%;
+}
+a,
+button,
+.portfolio-item,
+.scroll-link,
+.bt1,
+.bt2,
+.btn1,
+.btn2,
+.btn3 {
+  cursor: url("assets/light/hand.cur"), pointer !important;
+}
+input,
+textarea {
+  cursor: url("assets/light/ibeam.cur"), text !important;
+}
+
+/* Custom Selection Color */
+::selection {
+  background-color: white;
+  color: black;
+}
+::-moz-selection {
+  background-color: white;
+  color: black;
 }
 html {
   scroll-behavior: smooth;
   background-color: #0b0b0d;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Cursor Glow Effect */
+.cursor-glow {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  mix-blend-mode: screen;
+}
+
+/* Material Design Cursor Adjustment */
+/* Keeping the glow if it looks good, but removing the dot/outline as requested */
+.cursor-dot,
+.cursor-outline {
+  display: none !important;
+}
+
+/* Fix for Mobile: Hide custom cursor and restore default pulse/scroll behavior */
+@media (max-width: 991px) {
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  .portfolio-item,
+  .scroll-link {
+    cursor: auto !important;
+  }
+  .cursor-dot,
+  .cursor-outline,
+  .cursor-glow {
+    display: none !important;
+  }
+
+  /* About Buttons Alignment */
+  .about-btns {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px !important;
+  }
+  .about-btns a {
+    flex: 1; /* Make buttons equal width on small screens */
+  }
+  .btn1,
+  .btn2 {
+    width: 100% !important;
+    padding: 10px 5px !important;
+    font-size: 0.85rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .navbar {
-  background-color: #0b0b0d;
+  background-color: transparent;
+  transition: all 0.4s ease;
+  padding: 15px 0;
+}
+.navbar.scrolled {
+  background-color: rgba(11, 11, 13, 0.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 .nav-link {
   color: white;
@@ -43,21 +147,46 @@ html {
   background-color: #0b0b0d;
   width: 100%;
   height: 100vh;
+  position: relative; /* For absolutely positioned children like scroll indicator */
   user-select: none;
   -webkit-user-drag: none;
 }
 .main h3 {
   font-size: 4.4rem;
-  font-weight: 700;
+  font-weight: 900;
   color: white;
+  background: linear-gradient(to right, #ffffff, #888888);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
 }
 .main h6 {
   font-size: 1.4rem;
   text-transform: uppercase;
   line-height: 1;
   border-bottom: 3px solid white;
-  width: 42%;
+  width: fit-content;
   color: white;
+  min-height: 1.4rem;
+}
+
+/* Typing Effect Cursor */
+.typing-cursor {
+  border-right: 3px solid white;
+  animation: blink-caret 0.75s step-end infinite;
+  display: inline-block;
+  margin-left: 2px;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
 }
 .main .bt1 {
   height: 55px;
@@ -70,8 +199,10 @@ html {
   border-radius: 5px;
 }
 .main .bt1:hover {
-  background-color: rgb(216, 216, 216);
-  transition: 0.5s;
+  background-color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  transition: 0.3s;
 }
 .main .bt2 {
   height: 55px;
@@ -82,11 +213,72 @@ html {
   border: 1px solid white;
   font-weight: bold;
   border-radius: 5px;
+  transition: 0.3s;
 }
 .main .bt2:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+.scroll-indicator:hover {
+  opacity: 1;
+  color: white; /* Prevent blue color */
+  text-decoration: none;
+}
+.scroll-indicator span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white; /* Ensure text is white */
+}
+.scroll-indicator:hover span {
+  color: white;
+}
+.mouse {
+  width: 25px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 20px;
+  position: relative;
+}
+.wheel {
+  width: 4px;
+  height: 8px;
   background-color: white;
-  transition: 0.5s;
-  color: black;
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll-wheel 1.5s infinite;
+}
+@keyframes scroll-wheel {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 15px);
+    opacity: 0;
+  }
 }
 .social-links {
   display: flex;
@@ -244,6 +436,17 @@ h1 {
   color: black;
   border: none;
   transition: 0.5s;
+}
+
+/* About Buttons Container Fix */
+.about-btns {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 15px; /* Standard gap for desktop */
+}
+.btn1,
+.btn2 {
+  margin-top: 0 !important; /* Reset previously hardcoded margins */
 }
 /* Tech Stack Styling */
 .tech-stack {
@@ -582,6 +785,27 @@ footer {
   flex: 1; /* Takes available space */
   overflow-y: auto;
   padding-right: 10px;
+}
+
+/* Slick Carousel Custom Styling */
+.slick-dots {
+  bottom: -40px;
+}
+.slick-dots li button:before {
+  color: white;
+  font-size: 10px;
+  opacity: 0.3;
+}
+.slick-dots li.slick-active button:before {
+  color: white;
+  opacity: 1;
+}
+.tech-stack .row,
+#portfolio-grid {
+  margin-bottom: 30px;
+}
+.slick-slide {
+  padding: 0 10px;
 }
 
 /* Custom Scrollbar for description */
