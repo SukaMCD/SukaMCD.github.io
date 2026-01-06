@@ -44,7 +44,7 @@ $(document).ready(function () {
         _0x3c4d.style.background = "#0f0";
         sessionStorage.setItem("_0xd1n0_4cc3ss", "v4l1d_" + Date.now());
         setTimeout(() => {
-          window.location.href = "x7r4w2/v7b2m9.html";
+          window.location.href = "x7r4w2/v7b2m9";
         }, 800);
       }
     });
