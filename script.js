@@ -1,5 +1,6 @@
 $(document).ready(function () {
   renderProjects();
+  renderBlogs();
   initTypingEffect();
   initMobileCarousels();
 
@@ -137,22 +138,37 @@ function renderProjects() {
   container.innerHTML = portfolioProjects
     .map((project, index) => {
       let animation = "fade-up";
-      if (index % 3 === 0) animation = "fade-up-right";
-      if (index % 3 === 2) animation = "fade-up-left";
+      if (index % 3 === 0) animation = "fade-right";
+      if (index % 3 === 2) animation = "fade-left";
+
+      // Use the first tag as the category badge
+      const category =
+        project.tags && project.tags.length > 0 ? project.tags[0] : "Project";
 
       return `
       <div class="col-lg-4 mb-4">
-        <div class="item portfolio-item" data-aos="${animation}" data-aos-duration="2000"
+        <div class="blog-card" data-aos="${animation}" data-aos-duration="1000"
           data-title="${project.title}"
           data-description="${project.description}"
           data-tags="${project.tags.join(",")}"
           data-links='${JSON.stringify(project.links)}'
           data-image="${project.image}"
           onclick="openPortfolioModal(this)">
-          <img src="${project.image}" class="img-fluid" alt="${project.title}">
-          <div class="item-overlay">
-            <h5>${project.title}</h5>
-            <p>${project.description.split(".")[0]}.</p>
+          <div class="blog-img-container">
+            <img src="${project.image}" class="img-fluid" alt="${
+        project.title
+      }">
+            <span class="blog-category">${project.category}</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-date"><i class="far fa-calendar-alt mr-2"></i>${
+              project.date
+            }</div>
+            <h5 class="blog-title">${project.title}</h5>
+            <p class="blog-desc">${project.description}</p>
+            <a href="javascript:void(0)" class="blog-read-more">
+              View Project Details <i class="fas fa-arrow-right ml-1"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -233,6 +249,38 @@ function openPortfolioModal(element) {
   }
 
   $("#portfoliomodal").modal("show");
+}
+
+function renderBlogs() {
+  const container = document.getElementById("blogs-grid");
+  if (!container || typeof blogPosts === "undefined") return;
+
+  container.innerHTML = blogPosts
+    .map((post, index) => {
+      let animation = "fade-up";
+      if (index % 3 === 0) animation = "fade-right";
+      if (index % 3 === 2) animation = "fade-left";
+
+      return `
+      <div class="col-lg-4 mb-4">
+        <div class="blog-card" data-aos="${animation}" data-aos-duration="1000">
+          <div class="blog-img-container">
+            <img src="${post.image}" class="img-fluid" alt="${post.title}">
+            <span class="blog-category">${post.category}</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-date"><i class="far fa-calendar-alt mr-2"></i>${post.date}</div>
+            <h5 class="blog-title">${post.title}</h5>
+            <p class="blog-desc">${post.description}</p>
+            <a href="${post.link}" class="blog-read-more">
+              Read More <i class="fas fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+    })
+    .join("");
 }
 
 document.querySelectorAll(".scroll-link").forEach((link) => {

@@ -245,8 +245,8 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body p-0 position-relative">
-                    <button type="button" class="close position-absolute" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="bi bi-x-circle"></i>
                     </button>
                     <div class="container-fluid px-0">
                         <div class="row no-gutters">
@@ -292,38 +292,15 @@
     <!-- BLOG SECTION -->
     <section class="blog py-5" id="blog" style="background-color: #0b0b0d;">
         <div class="container py-5">
-            <h1 class="text-center">My Blog.</h1>
-            <div class="row py-5">
-                <div class="col-lg-4 mb-3">
-                    <div class="card" data-aos="fade-right" data-aos-duration="400">
-                        <img src="image/512x512.png" class="img-fluid" alt="">
-                        <small class="px-3 py-3 font-weight-bold">WebDesign</small>
-                        <h5 class="font-weight-bold px-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
-                            quia.</h5>
-                        <a href="#" class="font-weight-bold px-3 pb-4">Read More</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-3">
-                    <div class="card" data-aos="fade-up" data-aos-duration="400">
-                        <img src="image/512x512.png" class="img-fluid" alt="">
-                        <small class="px-3 py-3 font-weight-bold">WebDesign</small>
-                        <h5 class="font-weight-bold px-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
-                            quia.</h5>
-                        <a href="#" class="font-weight-bold px-3 pb-4">Read More</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-3">
-                    <div class="card" data-aos="fade-left" data-aos-duration="400">
-                        <img src="image/512x512.png" class="img-fluid" alt="">
-                        <small class="px-3 py-3 font-weight-bold">WebDesign</small>
-                        <h5 class="font-weight-bold px-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
-                            quia.</h5>
-                        <a href="#" class="font-weight-bold px-3 pb-4">Read More</a>
-                    </div>
-                </div>
+            <h1 class="text-center font-weight-bold mb-2">My Blog.</h1>
+            <p class="text-center text-muted mb-5">Insightful articles about technology and development.</p>
+            <div id="blogs-grid" class="row py-3">
+
             </div>
         </div>
+        </div>
     </section>
+
 
     <!-- CONTACT SECTION -->
     <section class="contact py-5" id="contact" style="background-color: #101010;">
@@ -332,29 +309,29 @@
             <div class="row py-5">
                 <div class="col-lg-10 mx-auto">
                     <div class="row text-center">
-                        <div class="col-lg-4" data-aos="fade-up" data-aos-duration="700">
+                        <div class="col-4 px-2" data-aos="fade-up" data-aos-duration="700">
                             <div class="circle">
                                 <span><i class="bi bi-cursor"></i></span>
                             </div>
-                            <h5 class="font-weight-bold">Address</h5>
-                            <p>Cendana 2 Street, No. 27, Tangerang City, Banten, Indonesia.</p>
+                            <h5 class="font-weight-bold contact-label-mobile">Address</h5>
+                            <p class="contact-text-mobile">Cendana 2 Street, No. 27, Tangerang City.</p>
                         </div>
-                        <div class="col-lg-4" data-aos="fade-up" data-aos-duration="700">
+                        <div class="col-4 px-2" data-aos="fade-up" data-aos-duration="700">
                             <a href="mailto:fabian25march@gmail.com" style="text-decoration: none; color: inherit;">
                                 <div class="circle">
                                     <span><i class="bi bi-envelope"></i></span>
                                 </div>
-                                <h5 class="font-weight-bold">Email</h5>
-                                <p>fabian25march@gmail.com</p>
+                                <h5 class="font-weight-bold contact-label-mobile">Email</h5>
+                                <p class="contact-text-mobile">fabian25march@gmail.com</p>
                             </a>
                         </div>
-                        <div class="col-lg-4" data-aos="fade-up" data-aos-duration="700">
+                        <div class="col-4 px-2" data-aos="fade-up" data-aos-duration="700">
                             <a href="tel:+6288905588200" style="text-decoration: none; color: inherit;">
                                 <div class="circle">
                                     <span><i class="bi bi-telephone"></i></span>
                                 </div>
-                                <h5 class="font-weight-bold">Phone</h5>
-                                <p>+62 889-0558-8200</p>
+                                <h5 class="font-weight-bold contact-label-mobile">Phone</h5>
+                                <p class="contact-text-mobile">+62 889-0558-8200</p>
                             </a>
                         </div>
                     </div>
@@ -402,7 +379,8 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <!-- Slick Carousel JS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="projects.js"></script>
+    <script src="database/projects.js"></script>
+    <script src="database/blogs.js"></script>
     <script src="script.js"></script>
 </body>
 
