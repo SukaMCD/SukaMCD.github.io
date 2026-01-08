@@ -677,19 +677,22 @@ h1 {
   font-size: 0.75rem;
   font-weight: 600;
   color: #ccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Hover Colors for Tech Items */
 .tech-item:hover i.php-color {
-  color: #777bb4;
+  color: #777bb3;
 }
 .tech-item:hover i.laravel-color {
-  color: #ff2d20;
+  color: #f0513f;
 }
 .tech-item:hover i.mysql-color {
-  color: #4479a1;
+  color: #00618a;
 }
-.tech-item:hover i.postgres-color {
+.tech-item:hover i.postgresql-color {
   color: #336791;
 }
 .tech-item:hover i.html-color {
@@ -709,6 +712,12 @@ h1 {
 }
 .tech-item:hover i.godot-color {
   color: #478cbf;
+}
+.tech-item:hover i.kotlin-color {
+  color: #c711e1;
+}
+.tech-item:hover i.engine-color {
+  color: #00aaff;
 }
 .tech-item:hover i.wp-color {
   color: #21759b;
