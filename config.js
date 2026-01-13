@@ -1,2 +1,2 @@
 //Maintenance Toggle
-const isMaintenance = true;
+const isMaintenance = false;
