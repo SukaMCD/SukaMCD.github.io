@@ -186,7 +186,7 @@ function renderProjects() {
           onclick="openPortfolioModal(this)">
           <div class="blog-img-container">
             <img src="${project.image}" class="img-fluid" alt="${
-        project.title
+        project.alt || project.title
       }" loading="lazy">
             <span class="blog-category">${project.category}</span>
           </div>
@@ -239,10 +239,12 @@ function openPortfolioModal(element) {
   const tags = element.getAttribute("data-tags");
   const linksData = element.getAttribute("data-links");
   const image = element.getAttribute("data-image");
+  const alt = element.querySelector(".blog-img-container img").alt;
 
   document.getElementById("modal-title").textContent = title;
   document.getElementById("modal-description").textContent = description;
   document.getElementById("modal-image").src = image;
+  document.getElementById("modal-image").alt = alt;
 
   // Handle tags
   const tagsContainer = document.getElementById("modal-tags");
@@ -297,11 +299,15 @@ function renderBlogs() {
       <div class="col-lg-4 mb-4">
         <div class="blog-card" data-aos="${animation}" data-aos-duration="1000">
           <div class="blog-img-container">
-            <img src="${post.image}" class="img-fluid" alt="${post.title}" loading="lazy">
+            <img src="${post.image}" class="img-fluid" alt="${
+        post.alt || post.title
+      }" loading="lazy">
             <span class="blog-category">${post.category}</span>
           </div>
           <div class="blog-content">
-            <div class="blog-date"><i class="far fa-calendar-alt mr-2"></i>${post.date}</div>
+            <div class="blog-date"><i class="far fa-calendar-alt mr-2"></i>${
+              post.date
+            }</div>
             <h5 class="blog-title">${post.title}</h5>
             <p class="blog-desc">${post.description}</p>
             <a href="${post.link}" class="blog-read-more">

@@ -173,7 +173,7 @@ html {
   user-select: none;
   -webkit-user-drag: none;
 }
-.main h3 {
+.main h1 {
   font-size: 4.4rem;
   font-weight: 900;
   color: white;
@@ -347,7 +347,8 @@ html {
 .about p {
   color: white;
 }
-h1 {
+h1,
+h2 {
   font-size: 3rem;
   font-weight: 900;
   color: white;

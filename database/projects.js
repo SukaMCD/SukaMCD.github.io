@@ -14,6 +14,7 @@ const portfolioProjects = [
       },
     ],
     image: "image/imgporto1.webp",
+    alt: "Screenshot website e-commerce Leafly Tea",
   },
   {
     title: "Lost Formula: A Forest Mystery",
@@ -30,6 +31,7 @@ const portfolioProjects = [
       },
     ],
     image: "image/imgporto2.webp",
+    alt: "Screenshot gameplay Lost Formula Godot Engine",
   },
   {
     title: "Web App Kegiatan Guru",
@@ -45,6 +47,7 @@ const portfolioProjects = [
       },
     ],
     image: "image/imgporto3.webp",
+    alt: "Interface Web App Kegiatan Guru PHP PostgreSQL",
   },
   {
     title: "Kedai Cendana",
@@ -60,6 +63,7 @@ const portfolioProjects = [
       },
     ],
     image: "image/imgporto4.webp",
+    alt: "Dashboard Laravel Kedai Cendana dengan Filament",
   },
   {
     title: "Instagram Clone Project",
@@ -75,6 +79,7 @@ const portfolioProjects = [
       },
     ],
     image: "image/imgporto5.webp",
+    alt: "Aplikasi Android Instagram Clone menggunakan Kotlin",
   },
   {
     title: "Website Manajemen Sekolah",
@@ -88,5 +93,6 @@ const portfolioProjects = [
       { label: "SMP Budi Luhur", url: "https://smp.sekolahbudiluhur.sch.id" },
     ],
     image: "image/imgporto6.webp",
+    alt: "Tampilan Website Manajemen Sekolah berbasis WordPress",
   },
 ];
