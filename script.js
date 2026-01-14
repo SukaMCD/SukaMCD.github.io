@@ -189,7 +189,9 @@ function renderProjects() {
     .join("");
 
   if (typeof AOS !== "undefined") {
-    AOS.init();
+    AOS.init({
+      once: true,
+    });
     AOS.refresh();
   }
 }

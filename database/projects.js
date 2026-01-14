@@ -13,7 +13,7 @@ const portfolioProjects = [
         url: "https://budiluhurdigital.com/project/10RPL/LeaflyTea/",
       },
     ],
-    image: "image/imgporto1.png",
+    image: "image/imgporto1.webp",
   },
   {
     title: "Lost Formula: A Forest Mystery",
@@ -29,7 +29,7 @@ const portfolioProjects = [
         url: "https://sukamcd.itch.io/lost-formula-a-forest-mystery",
       },
     ],
-    image: "image/imgporto2.png",
+    image: "image/imgporto2.webp",
   },
   {
     title: "Web App Kegiatan Guru",
@@ -44,7 +44,7 @@ const portfolioProjects = [
         url: "https://github.com/SukaMCD/Aplikasi-Guru",
       },
     ],
-    image: "image/imgporto3.png",
+    image: "image/imgporto3.webp",
   },
   {
     title: "Kedai Cendana",
@@ -59,7 +59,7 @@ const portfolioProjects = [
         url: "https://github.com/SukaMCD/Kedai-Cendana",
       },
     ],
-    image: "image/imgporto4.png",
+    image: "image/imgporto4.webp",
   },
   {
     title: "Instagram Clone Project",
@@ -74,7 +74,7 @@ const portfolioProjects = [
         url: "https://github.com/ieatcheese99/Instagram.git",
       },
     ],
-    image: "image/imgporto5.png",
+    image: "image/imgporto5.webp",
   },
   {
     title: "Website Manajemen Sekolah",
@@ -87,6 +87,6 @@ const portfolioProjects = [
       { label: "SD Ceria", url: "https://timoho.ceria.sch.id" },
       { label: "SMP Budi Luhur", url: "https://smp.sekolahbudiluhur.sch.id" },
     ],
-    image: "image/imgporto6.png",
+    image: "image/imgporto6.webp",
   },
 ];
