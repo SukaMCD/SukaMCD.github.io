@@ -1,8 +1,12 @@
 $(document).ready(function () {
-  renderProjects();
-  renderBlogs();
+  // Simulate loading delay for Skeleton UI
+  setTimeout(() => {
+    renderProjects();
+    renderBlogs();
+    initMobileCarousels();
+  }, 1000);
+
   initTypingEffect();
-  initMobileCarousels();
 
   // Glassmorphism Navbar Logic
   $(window).scroll(function () {
@@ -126,14 +130,28 @@ function initMobileCarousels() {
     }
   }, 100);
 
-  // Re-check on resize
-  $(window).on("resize", function () {
-    if ($(window).width() < 992) {
-      if (!$techRow.hasClass("slick-initialized")) $techRow.slick(settings);
-      const $portRow = $("#portfolio-grid");
-      if (!$portRow.hasClass("slick-initialized")) $portRow.slick(settings);
-    }
-  });
+  // Re-check on resize with debouncing
+  $(window).on(
+    "resize",
+    debounce(function () {
+      if ($(window).width() < 992) {
+        if (!$techRow.hasClass("slick-initialized")) $techRow.slick(settings);
+        const $portRow = $("#portfolio-grid");
+        if (!$portRow.hasClass("slick-initialized")) $portRow.slick(settings);
+      }
+    }, 250)
+  );
+}
+
+// Debounce helper function
+function debounce(func, wait) {
+  let timeout;
+  return function () {
+    const context = this,
+      args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(context, args), wait);
+  };
 }
 
 function renderProjects() {
@@ -169,7 +187,7 @@ function renderProjects() {
           <div class="blog-img-container">
             <img src="${project.image}" class="img-fluid" alt="${
         project.title
-      }">
+      }" loading="lazy">
             <span class="blog-category">${project.category}</span>
           </div>
           <div class="blog-content">
@@ -279,7 +297,7 @@ function renderBlogs() {
       <div class="col-lg-4 mb-4">
         <div class="blog-card" data-aos="${animation}" data-aos-duration="1000">
           <div class="blog-img-container">
-            <img src="${post.image}" class="img-fluid" alt="${post.title}">
+            <img src="${post.image}" class="img-fluid" alt="${post.title}" loading="lazy">
             <span class="blog-category">${post.category}</span>
           </div>
           <div class="blog-content">
