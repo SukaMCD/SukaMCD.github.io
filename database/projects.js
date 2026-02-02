@@ -55,12 +55,10 @@ const portfolioProjects = [
     date: "6 Sep, 2025",
     description:
       "Website Kedai Cendana dibangun menggunakan Laravel dengan Filament sebagai panel admin dan PostgreSQL sebagai basis data, serta mendukung login menggunakan akun Google.",
-    tags: ["Laravel", "PostgreSQL", "Filament", "Google Auth"],
+    tags: ["Laravel", "PostgreSQL", "Filament", "Google Auth", "Firebase"],
     links: [
-      {
-        label: "View Project",
-        url: "https://github.com/SukaMCD/Kedai-Cendana",
-      },
+      { label: "View Project", url: "https://github.com/SukaMCD/Beasiswa" },
+      { label: "Kedai Cendana", url: "https://kedaicendana.my.id" },
     ],
     image: "image/imgporto4.webp",
     alt: "Dashboard Laravel Kedai Cendana dengan Filament",

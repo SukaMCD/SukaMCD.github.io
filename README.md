@@ -19,6 +19,7 @@ Portfolio website pribadi untuk menampilkan proyek, blog, dan informasi tentang 
 ## Teknologi yang Digunakan
 
 ### Frontend
+
 - **HTML5** - Struktur website
 - **CSS3** - Styling dengan glassmorphism dan neon effects
 - **JavaScript (Vanilla)** - Interaktivitas dan logika
@@ -28,6 +29,7 @@ Portfolio website pribadi untuk menampilkan proyek, blog, dan informasi tentang 
 - **Slick Carousel** - Carousel untuk portfolio dan blog
 
 ### Backend & Tools
+
 - **EmailJS** - Service untuk mengirim email dari form kontak
 - **Git** - Version control
 - **GitHub Pages** - Hosting dan deployment
@@ -130,7 +132,7 @@ Portfolio ini adalah proyek pribadi. Silakan gunakan sebagai referensi atau temp
 
 - GitHub: [@SukaMCD](https://github.com/SukaMCD)
 - LinkedIn: [fabianrizkypratama](https://www.linkedin.com/in/fabianrizkypratama)
-- Instagram: [@still.fabian](https://www.instagram.com/still.fabian/)
+- Instagram: [@sukamcd.dev](https://www.instagram.com/sukamcd.dev/)
 
 ## Acknowledgments
 
